@@ -2,13 +2,13 @@
   <div class="flex flex-col items-center justify-center">
     <div class="flex w-18/20 flex-col gap-15 py-15">
       <div
-        class="flex h-30 w-full items-center justify-center rounded-lg bg-[#8352A5] text-5xl text-white"
+        class="flex h-30 w-full items-center justify-center rounded-lg bg-[#8352A5] text-5xl text-white department-bar opacity-0 -translate-x-20"
       >
         Bienvenue Msr FOPA
       </div>
       <form
         action=""
-        class="flex h-fit flex-col gap-10 rounded-xl border border-gray-300 px-18 pt-8 pb-7"
+        class="flex h-fit flex-col gap-10 rounded-xl border border-gray-300 px-18 pt-8 pb-7 department-form opacity-0 translate-x-20"
       >
         <div class="flex justify-center text-4xl text-[#8352A5]">Soumettez votre demande</div>
         <div class="flex flex-col gap-4 text-xl">
@@ -39,3 +39,24 @@
     </div>
   </div>
 </template>
+
+<script setup>
+onMounted(() => {
+
+  useGsap.to(".department-bar", {
+      autoAlpha: 1, // Rend visible et ajuste l'opacité
+      x: 0, // Remet la carte à sa position normale
+      duration: 1, 
+      ease: "power2.out"
+    }
+  );
+  useGsap.to(".department-form", {
+      autoAlpha: 1, // Rend visible et ajuste l'opacité
+      x: 0, // Remet la carte à sa position normale
+      duration: 1, 
+      ease: "power2.out"
+    }
+  );
+
+});
+</script>

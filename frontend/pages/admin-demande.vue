@@ -2,8 +2,8 @@
   <div class="flex flex-col items-center justify-center">
     <div class="flex w-18/20 flex-col gap-30 py-30">
       <div class="flex flex-row items-center gap-100">
-        <MiniTitle message1="Liste des demandes" />
-        <form>
+        <MiniTitle message1="Liste des demandes" class="title-liste-demande" />
+        <form class="admin-demande-form opacity-0 translate-x-50">
           <input
             type="text"
             name="search"
@@ -14,7 +14,7 @@
           </div>
         </form>
       </div>
-      <div class="flex flex-wrap gap-10">
+      <div class="flex flex-wrap gap-10 stats opacity-0 translate-y-50">
         <AdminDemandeCase
           v-for="demande in demandes"
           :message1="demande.title"
@@ -31,4 +31,23 @@
     { id: 2, title: "Besoin d'un Développeur IA", content: "Departement informatique" },
     { id: 3, title: "Besoin d'un comptable", content: "Departement des finances" },
   ];
+
+  onMounted(() => {
+
+    useGsap.to(".admin-demande-form", {
+        autoAlpha: 1, // Rend visible et ajuste l'opacité
+        x: 0, // Remet la carte à sa position normale
+        duration: 1, 
+        ease: "power2.out"
+      }
+    );
+    useGsap.to(".stats", {
+        autoAlpha: 1, // Rend visible et ajuste l'opacité
+        y: 0, // Remet la carte à sa position normale
+        duration: 1, 
+        ease: "power2.out"
+      }
+    );
+
+  });
 </script>

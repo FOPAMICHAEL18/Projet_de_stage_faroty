@@ -10,4 +10,6 @@
   const props = defineProps({
     message1: "string",
   });
+
+
 </script>

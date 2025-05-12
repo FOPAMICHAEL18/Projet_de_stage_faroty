@@ -3,15 +3,16 @@
     <div class="flex w-18/20 flex-col gap-15 py-20">
       <div class="flex items-center justify-center">
         <p
-          class="text-4xl text-[#8352A5] after:mt-4 after:ml-0 after:block after:h-2 after:w-106 after:rounded-xs after:bg-[#8352A5]"
+          ref="lign"
+          class="text-4xl text-[#8352A5] after:mt-4 after:ml-0 after:block after:h-2 after:w-0 after:rounded-xs after:bg-[#8352A5] after:transition-all after:duration-1000 after:delay-500 candidature-candidature opacity-0 -translate-y-20 "
         >
           Deposer votre candidature
         </p>
       </div>
       <form action="" class="flex flex-col gap-20">
         <div class="flex flex-col gap-14">
-          <MiniTitle message1="Vos informations personnelles" />
-          <div class="flex flex-col gap-10 pl-11">
+          <MiniTitle message1="Vos informations personnelles" class="candidature-personnel" />
+          <div class="flex flex-col gap-10 pl-11 candidature-informations opacity-0 translate-x-20">
             <div class="flex flex-col gap-1 text-xl">
               <label for="name">Nom et prenom</label>
               <input
@@ -49,8 +50,8 @@
               />
             </div>
           </div>
-          <MiniTitle message1="Vos documents de candidature" />
-          <div class="flex w-7/10 flex-wrap gap-13">
+          <MiniTitle message1="Vos documents de candidature" class="candidature-document" />
+          <div class="flex w-7/10 flex-wrap gap-13" data-aos="fade-up" data-aos-duration="800" >
             <div class="flex flex-col gap-3 pl-11 text-xl">
               <p>Deposer votre CV</p>
               <label
@@ -99,11 +100,13 @@
           </div>
         </div>
         <div class="flex w-250 flex-row items-center justify-between pl-11">
-          <div class="mt-10 w-40 rounded-sm bg-[#8352A5] px-1 py-2 text-center text-xl text-white">
+          <div class="mt-10 w-40 rounded-sm bg-[#8352A5] px-1 py-2 text-center text-xl text-white" data-aos="fade-right"data-aos-duration="800">
             Precedent
           </div>
           <button
             class="mt-10 w-40 rounded-sm bg-[#8352A5] px-1 py-2 text-center text-xl text-white"
+            data-aos="fade-left"
+            data-aos-duration="800"
           >
             Postuler
           </button>
@@ -112,3 +115,30 @@
     </div>
   </div>
 </template>
+
+<script setup>
+
+const lign = useTemplateRef("lign");
+
+onMounted(() => {
+
+  lign.value?.classList.add("after:w-106");
+  useGsap.to(".candidature-candidature", {
+      autoAlpha: 1, // Rend visible et ajuste l'opacité
+      y: 0, // Remet la carte à sa position normale
+      duration: 1, 
+      ease: "power2.out"
+    }
+  );
+  useGsap.to(".candidature-informations", {
+      autoAlpha: 1, // Rend visible et ajuste l'opacité
+      x: 0, // Remet la carte à sa position normale
+      duration: 1, 
+      ease: "power2.out",
+      delay: 1.5 // Délai de 0.5 seconde avant le début de l'animation
+    }
+  );
+
+  });
+
+</script>

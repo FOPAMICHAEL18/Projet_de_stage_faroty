@@ -39,7 +39,7 @@
             </div>
           </div>
           <div
-            class="invisible absolute top-18 flex w-56 translate-y-2 flex-col gap-2 rounded-md bg-white px-4 py-3 text-xl text-gray-500 opacity-0 shadow-lg transition-all duration-500 peer-hover:visible peer-hover:translate-y-0 peer-hover:opacity-100 peer-hover:duration-500 hover:visible hover:translate-y-0 hover:opacity-100"
+            class="invisible absolute top-18 flex w-56 translate-y-2 flex-col gap-2 rounded-md bg-white px-4 py-3 text-xl text-gray-500 opacity-0 shadow-lg transition-all duration-500 peer-hover:visible peer-hover:translate-y-0 peer-hover:opacity-100 peer-hover:duration-500 hover:visible hover:translate-y-0 hover:opacity-100 z-10"
           >
             <div
               class="cursor-pointer border-b border-gray-200 py-2 hover:border-[#8352A5] hover:text-[#8352A5]"
@@ -71,7 +71,7 @@
             </div>
           </div>
           <div
-            class="invisible absolute top-18 flex w-56 translate-y-2 flex-col gap-2 rounded-md bg-white px-4 py-3 text-xl text-gray-500 opacity-0 shadow-lg transition-all duration-500 peer-hover:visible peer-hover:translate-y-0 peer-hover:opacity-100 peer-hover:duration-500 hover:visible hover:translate-y-0 hover:opacity-100"
+            class="invisible absolute top-18 flex w-56 translate-y-2 flex-col gap-2 rounded-md bg-white px-4 py-3 text-xl text-gray-500 opacity-0 shadow-lg transition-all duration-500 peer-hover:visible peer-hover:translate-y-0 peer-hover:opacity-100 peer-hover:duration-500 hover:visible hover:translate-y-0 hover:opacity-100 z-10"
           >
             <div
               class="cursor-pointer border-b border-gray-200 py-2 hover:border-[#8352A5] hover:text-[#8352A5]"
@@ -118,7 +118,7 @@
         </div>
         <div
           ref="user-setting"
-          class="invisible absolute top-18 right-5 flex w-56 translate-y-2 flex-col gap-2 rounded-md bg-white px-4 py-3 text-xl text-[#ccc9c9] opacity-0 shadow-lg transition-all duration-500"
+          class="invisible absolute top-18 right-5 flex w-56 translate-y-2 flex-col gap-2 rounded-md bg-white px-4 py-3 text-xl text-[#ccc9c9] opacity-0 shadow-lg transition-all duration-500 z-10"
         >
           <div class="group flex cursor-pointer items-center gap-4 border-b border-[#ccc9c9]">
             <div

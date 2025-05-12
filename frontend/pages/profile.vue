@@ -42,4 +42,16 @@
 <script setup>
   const options = ["Compte", "Mot de passe", "Email", "Poste"];
   const countstore = useCounterStore();
+
+  onMounted(() => {
+
+useGsap.to(".index-bar", {
+    autoAlpha: 1, // Rend visible et ajuste l'opacité
+    y: 0, // Remet la carte à sa position normale
+    duration: 1, 
+    ease: "power2.out"
+  }
+);
+
+});
 </script>

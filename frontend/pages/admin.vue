@@ -21,4 +21,16 @@
     { id: 4, number: 4, title: "Entretien", content: "Nombre d'entretiens" },
   ];
   const countstore = useCounterStore();
+
+  onMounted(() => {
+
+    useGsap.to(".index-bar", {
+        autoAlpha: 1, // Rend visible et ajuste l'opacité
+        y: 0, // Remet la carte à sa position normale
+        duration: 1, 
+        ease: "power2.out"
+      }
+    );
+
+});
 </script>
