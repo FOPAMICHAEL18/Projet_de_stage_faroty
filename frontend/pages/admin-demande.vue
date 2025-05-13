@@ -3,13 +3,13 @@
     <div class="flex w-18/20 flex-col gap-30 py-30">
       <div class="flex flex-row items-center gap-100">
         <MiniTitle message1="Liste des demandes" class="title-liste-demande" />
-        <form class="admin-demande-form opacity-0 translate-x-50">
+        <form class="">
           <input
             type="text"
             name="search"
-            class="h-12 w-180 rounded-md border border-[#ccc9c9] p-2"
+            class="h-12 w-180 rounded-md border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] admin-demande-form opacity-0 translate-x-50"
           />
-          <div class="absolute bottom-186.5 left-380 size-10">
+          <div class="absolute bottom-186.5 left-380 size-10 admin-demande-form opacity-0 translate-x-50 cursor-pointer">
             <img src="@/public/icons8-search-250.png" alt="search" class="size-full" />
           </div>
         </form>

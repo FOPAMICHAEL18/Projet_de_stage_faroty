@@ -4,9 +4,9 @@
       <h1>{{ message1 }}</h1>
     </div>
     <div>{{ message2 }}</div>
-    <button class="w-50 rounded-sm bg-[#8352A5] px-2 py-1 text-lg text-white">
+    <div class="w-50 rounded-sm bg-[#8352A5] px-2 py-1 text-lg text-white cursor-pointer text-center" @click="change">
       {{ message3 }}
-    </button>
+    </div>
   </div>
 </template>
 
@@ -16,4 +16,11 @@
     message2: "string",
     message3: "string",
   });
+const countstore = useCounterStore();
+const visible = computed(() => countstore.visible);
+
+const change = () => {
+  countstore.visibility();
+  console.log(visible)
+};
 </script>

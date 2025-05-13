@@ -14,11 +14,11 @@
 
       useGsap.fromTo(".title-rechercher-offre", 
         { x: 20 }, // Valeurs initiales
-        { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out", delay: 0.5 } // Valeurs finales
+        { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out", delay: 0.2 } // Valeurs finales
       );
       useGsap.fromTo(".title-derniere-offre", 
         { x: 20 }, // Valeurs initiales
-        { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out", delay: 1.8 } // Valeurs finales
+        { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out", delay: 0.9 } // Valeurs finales
       );
       useGsap.fromTo(".title-nos-offres", 
         { x: 20 }, // Valeurs initiales
@@ -38,7 +38,7 @@
       );
       useGsap.fromTo(".candidature-document", 
         { x: 20 }, // Valeurs initiales
-        { autoAlpha: 1, x: 0, duration: 1.6, ease: "power2.out", delay: 1.4 } // Valeurs finales
+        { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out", delay: 1.8 } // Valeurs finales
       );
       useGsap.fromTo(".creation-detail", 
       { opacity: 0 }, // État initial (invisible, légèrement en bas)

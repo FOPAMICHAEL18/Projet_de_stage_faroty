@@ -5,7 +5,7 @@
     </div> -->
 
   <div class="flex h-20 items-center justify-between px-25">
-    <div class="w-28"><img src="@/public/logofaroty.png" alt="logofaroty" /></div>
+    <div class="w-28 header-connection opacity-0 -translate-y-5"><img src="@/public/logofaroty.png" alt="logofaroty" /></div>
     <div class="flex items-center gap-25">
       <div class="flex gap-15 text-xl text-[#8352A5]" v-if="connect2">
         <div class="group px-4 hover:cursor-pointer">
@@ -148,12 +148,12 @@
           </div>
         </div>
       </div>
-      <div
-        class="flex items-center justify-center rounded-sm bg-[#8352A5] px-7 pt-2 pb-3 text-xl text-white"
+      <NuxtLink to="/log-in"
+        class="flex items-center justify-center rounded-sm bg-[#8352A5] px-7 pt-2 pb-3 text-xl text-white header-connection opacity-0 -translate-y-5"
         v-if="!connect"
       >
-        <NuxtLink to="/log-in">connexion</NuxtLink>
-      </div>
+        connexion
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -227,4 +227,15 @@
       usersetting.value?.classList.add("duration-500");
     }
   };
+onMounted(() => {
+
+  useGsap.to(".header-connection", {
+      autoAlpha: 1, // Rend visible et ajuste l'opacité
+      y: 0, // Remet la carte à sa position normale
+      duration: 1, 
+      ease: "power2.out"
+    }
+  );
+
+});
 </script>

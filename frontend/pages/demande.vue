@@ -20,7 +20,7 @@
         </div>
       </form>
       <div flex class="flex flex-col items-center gap-5">
-        <DemandeCase v-for="option in options" :message1="option" class="demande-case opacity-0 translate-y-20" />
+        <DemandeCase v-for="option in options" :message1="option.message" :message2="option.statut" class="demande-case opacity-0 translate-y-20" />
       </div>
     </div>
   </div>
@@ -28,13 +28,13 @@
 
 <script setup>
 const options = [
-  "Besoin d'un Developpeur Frontend",
-  "Besoin d'un Développeur Backend",
-  "Besoin d'un Développeur Fullstack",
-  "Besoin d'un Développeur Mobile",
-  "Besoin d'un Développeur Web",
-  "Besoin d'un Développeur Data",
-  "Besoin d'un Développeur IA",
+  { statut: "En cours...", message: "Besoin d'un Developpeur Frontend" },
+  { statut: "En cours...", message: "Besoin d'un Développeur Backend" },
+  { statut: "Valider", message: "Besoin d'un Développeur Fullstack" },
+  { statut: "Valider", message: "Besoin d'un Développeur Mobile" },
+  { statut: "Rejeter", message: "Besoin d'un Développeur Web" },
+  { statut: "Valider", message: "Besoin d'un Développeur Data" },
+  { statut: "Valider", message: "Besoin d'un Développeur IA" },
 ];
 const countstore = useCounterStore();
 const lign = useTemplateRef("lign");

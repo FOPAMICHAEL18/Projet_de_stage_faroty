@@ -20,32 +20,44 @@
             <h1 class="font-semibold">Adresse</h1>
             <p class="ml-1">Lorem ipsum vst csvtv</p>
           </div>
+          <div class="flex flex-col gap-5 text-2xl info opacity-0 translate-y-20">
+            <h1 class="font-semibold">Niveau d'etude</h1>
+            <p class="ml-1">Lorem ipsum vst csvtv</p>
+          </div>
+          <div class="flex flex-col gap-5 text-2xl info opacity-0 translate-y-20">
+            <h1 class="font-semibold">Niveau d'experience</h1>
+            <p class="ml-1">Lorem ipsum vst csvtv</p>
+          </div>
+          <div class="flex flex-col gap-5 text-2xl info opacity-0 translate-y-20">
+            <h1 class="font-semibold">Langue</h1>
+            <p class="ml-1">Lorem ipsum vst csvtv</p>
+          </div>
         </div>
         <div class="flex flex-col gap-15">
           <MiniTitle message1="Documents de candidature" class="title-rechercher-offre" />
           <div class="flex flex-wrap gap-10 info-doc opacity-0 translate-y-20">
             <div
-              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white"
+              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white cursor-pointer"
             >
               CV
             </div>
             <div
-              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white"
+              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white cursor-pointer"
             >
               photo-cni
             </div>
             <div
-              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white"
+              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white cursor-pointer"
             >
               lettre-motivation
             </div>
             <div
-              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white"
+              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white cursor-pointer"
             >
               plan localisation
             </div>
             <div
-              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white"
+              class="flex w-60 items-center justify-center rounded-sm bg-[#8352A5] px-4 py-3 text-xl text-white cursor-pointer"
             >
               lettre-recommandation
             </div>
@@ -53,13 +65,13 @@
         </div>
         <div class="mt-10 flex flex-row gap-8">
           <div
-            class="flex w-60 items-center justify-center rounded-sm bg-red-500 px-4 py-3 text-xl text-white"
+            class="flex w-60 items-center justify-center rounded-sm bg-red-500 px-4 py-3 text-xl text-white cursor-pointer"
             data-aos = "fade-up"
           >
             Accepter
           </div>
           <div
-            class="flex w-60 items-center justify-center rounded-sm bg-green-500 px-4 py-3 text-xl text-white"
+            class="flex w-60 items-center justify-center rounded-sm bg-green-500 px-4 py-3 text-xl text-white cursor-pointer"
             data-aos = "fade-up"
             data-aos-delay="200"
           >

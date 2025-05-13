@@ -7,9 +7,10 @@ export const useCounterStore = defineStore("counter", () => {
     const option2 = ref(false);
     const option3 = ref(false);
     const option4 = ref(false);
-    const connect = ref(true);
-    const connect2 = ref(true);
+    const connect = ref(false);
+    const connect2 = ref(false);
     const connect3 = ref(false);
+    const visible = ref(false);
   
     function changedash1() {
       dash1.value = !dash1.value;
@@ -35,6 +36,9 @@ export const useCounterStore = defineStore("counter", () => {
     function changeoption4() {
       option4.value = !option4.value;
     }
+    function visibility() {
+      visible.value = !visible.value;
+    }
   
     return {
       dash1,
@@ -48,6 +52,7 @@ export const useCounterStore = defineStore("counter", () => {
       connect,
       connect2,
       connect3,
+      visible,
       changedash1,
       changedash2,
       changedash3,
@@ -56,6 +61,7 @@ export const useCounterStore = defineStore("counter", () => {
       changeoption2,
       changeoption3,
       changeoption4,
+      visibility,
     };
   });
   

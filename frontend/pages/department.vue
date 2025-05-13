@@ -13,25 +13,25 @@
         <div class="flex justify-center text-4xl text-[#8352A5]">Soumettez votre demande</div>
         <div class="flex flex-col gap-4 text-xl">
           <div class="flex flex-col gap-4">
-            <label for="name">Titre de la demande</label>
+            <label for="name" class="w-fit">Titre de la demande</label>
             <input
               type="text"
               name="name"
               id="name"
-              class="h-14 w-250 rounded-sm border border-gray-300 p-2"
+              class="h-14 w-250 rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
             />
           </div>
           <div class="flex flex-col gap-4 text-xl">
-            <label for="demande">Contenu de la demande</label>
+            <label for="demande" class="w-fit">Contenu de la demande</label>
             <textarea
               name="demande"
               id="demande"
-              class="h-70 w-380 rounded-sm border border-gray-300 p-2"
+              class="h-70 w-380 rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
             ></textarea>
           </div>
         </div>
         <div class="flex flex-col items-center gap-4">
-          <button class="rounded-md bg-[#8352A5] px-12 py-2 text-2xl text-white">
+          <button class="rounded-md bg-[#8352A5] px-12 py-2 text-2xl text-white cursor-pointer">
             Soumettre la demande
           </button>
         </div>

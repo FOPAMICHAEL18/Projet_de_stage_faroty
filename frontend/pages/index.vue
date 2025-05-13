@@ -10,15 +10,15 @@
             <input
               type="text"
               name="search"
-              class="h-14 w-11/20 rounded-sm border border-gray-300 p-2 index-search-bar opacity-0 translate-y-10"
+              class="h-14 w-11/20 rounded-sm border border-gray-300 p-2 index-search-bar opacity-0 translate-y-10 focus:outline focus:outline-[#8352A5] hover:cursor-pointer"
             />
-            <button type="submit" class="size-14 rounded-sm bg-[#8352A5] p-2 text-white index-search-button opacity-0 translate-y-10">
+            <button type="submit" class="size-14 rounded-sm bg-[#8352A5] p-2 text-white index-search-button opacity-0 translate-y-10  cursor-pointer">
               <img src="@/public/icons8-search-250 (1).png" alt="search" class="size-full" />
             </button>
           </div>
           <div class="flex flex-row items-center gap-11">
             <select
-              class="h-13 w-72 rounded-sm border border-gray-300 p-2 text-gray-300 index-contrat opacity-0 translate-y-10"
+              class="h-13 w-72 rounded-sm border border-gray-300 p-2 text-gray-300 index-contrat opacity-0 translate-y-10 hover:cursor-pointer"
               name="contrat"
               id="contrat"
             >
@@ -28,25 +28,25 @@
               <option value="Stage">Stage</option>
             </select>
             <select
-              class="h-13 w-72 rounded-sm border border-gray-300 p-2 text-gray-300 index-metier opacity-0 translate-y-10"
+              class="h-13 w-72 rounded-sm border border-gray-300 p-2 text-gray-300 index-metier opacity-0 translate-y-10 hover:cursor-pointer"
               name="metier"
               id="metier"
             >
               <option value="">Metier</option>
-              <option value="CDI">CDI</option>
-              <option value="CDD">CDD</option>
-              <option value="Stage">Stage</option>
+              <option value="CDI">Informatique</option>
+              <option value="CDD">Gestion Compta</option>
+              <option value="Stage">Gestion marketing</option>
             </select>
-            <div
-              class="flex h-13 w-72 items-center justify-center rounded-sm bg-[#8352A5] text-white index-voir opacity-0 translate-y-10"
+            <NuxtLink to="/offres"
+              class="flex h-13 w-72 items-center justify-center rounded-sm bg-[#8352A5] text-white index-voir opacity-0 translate-y-10 hover:cursor-pointer"
             >
-              <NuxtLink to="/offres">Voir toutes nos offres</NuxtLink>
-            </div>
+              Voir toutes nos offres
+            </NuxtLink>
           </div>
         </form>
         <MiniTitle message1="Nos dernieres offres d'emplois" class="title-derniere-offre" />
-        <div class="flex flex-wrap items-center gap-5 index-offre opacity-0 translate-y-10">
-          <CubeCase v-for="option in options" :message1="option" />
+        <div class="flex flex-wrap items-center gap-7 index-offre opacity-0 translate-y-10">
+          <CubeCase v-for="option in options" :message1="option.message1" :message2="option.message2" :message3="option.message3" />
         </div>
       </div>
     </div>
@@ -56,13 +56,13 @@
   
     const countstore = useCounterStore();
     const options = [
-      "Developpeur Frontend",
-      "Développeur Backend",
-      "Développeur Fullstack",
-      "Développeur Mobile",
-      "Développeur Web",
-      "Développeur Data",
-      "Développeur IA",
+      { message1: "Développeur Frontend", message2: "CDD", message3: "3 mois" },
+      { message1: "Développeur Backend", message2: "CDI", message3: "2 ans" },
+      { message1: "Développeur Fullstack", message2: "Stage", message3: "1 mois" },
+      { message1: "Développeur Mobile", message2: "CDD", message3: "1 ans" },
+      { message1: "Développeur Web", message2: "Stage", message3: "3 mois" }, 
+      { message1: "Développeur Data", message2: "CDI", message3: "2 ans" },
+      { message1: "Développeur IA", message2: "Stage", message3: "6 mois" },
     ];
 
     onMounted(() => {
@@ -79,7 +79,7 @@
           y: 0, // Remet la carte à sa position normale
           duration: 1, 
           ease: "power2.out",
-          delay: 0.6 // Délai de 0.5 seconde avant le début de l'animation
+          delay: 0.3 // Délai de 0.5 seconde avant le début de l'animation
         }
       );
       useGsap.to(".index-search-button", {
@@ -87,7 +87,7 @@
           y: 0, // Remet la carte à sa position normale
           duration: 1, 
           ease: "power2.out",
-          delay: 0.8 // Délai de 0.5 seconde avant le début de l'animation
+          delay: 0.4 // Délai de 0.5 seconde avant le début de l'animation
         }
       );
       useGsap.to(".index-contrat", {
@@ -95,7 +95,7 @@
           y: 0, // Remet la carte à sa position normale
           duration: 1, 
           ease: "power2.out",
-          delay: 1 // Délai de 0.5 seconde avant le début de l'animation
+          delay: 0.5 // Délai de 0.5 seconde avant le début de l'animation
         }
       );
       useGsap.to(".index-metier", {
@@ -103,7 +103,7 @@
           y: 0, // Remet la carte à sa position normale
           duration: 1, 
           ease: "power2.out",
-          delay: 1.2 // Délai de 0.5 seconde avant le début de l'animation
+          delay: 0.6 // Délai de 0.5 seconde avant le début de l'animation
         }
       );
       useGsap.to(".index-voir", {
@@ -111,7 +111,7 @@
           y: 0, // Remet la carte à sa position normale
           duration: 1, 
           ease: "power2.out",
-          delay: 1.4 // Délai de 0.5 seconde avant le début de l'animation
+          delay: 0.7 // Délai de 0.5 seconde avant le début de l'animation
         }
       );
       useGsap.to(".index-offre", {
@@ -119,10 +119,11 @@
           y: 0, // Remet la carte à sa position normale
           duration: 1, 
           ease: "power2.out",
-          delay: 2 // Délai de 0.5 seconde avant le début de l'animation
+          delay: 1 // Délai de 0.5 seconde avant le début de l'animation
         }
       );
 
     });
+
   </script>
   

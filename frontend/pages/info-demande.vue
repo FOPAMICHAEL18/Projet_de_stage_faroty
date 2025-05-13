@@ -23,9 +23,9 @@
         <MiniTitle message1="Statut" class="title-nos-offres" />
         <p class="info-description opacity-0 -translate-y-10">En cours</p>
       </div>
-      <button class="mt-10 w-40 rounded-sm bg-[#8352A5] px-1 py-1 text-lg text-white info-precedent opacity-0 translate-y-10">
+      <NuxtLink to="/demande" class="mt-10 w-40 rounded-sm bg-[#8352A5] px-1 py-1 text-lg text-white info-precedent opacity-0 translate-y-10 cursor-pointer text-center">
         Precedent
-      </button>
+      </NuxtLink>
     </div>
   </div>
 </template>

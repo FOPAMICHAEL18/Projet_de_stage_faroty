@@ -80,8 +80,8 @@
           >
             Ces offres pourraient vous interesser
           </p>
-          <div class="flex flex-wrap items-center gap-10">
-            <CubeCase v-for="option in options" :message1="option" class="description-poste opacity-0 translate-y-20" /> 
+          <div class="flex flex-wrap items-center gap-10 description-poste opacity-0 translate-y-20">
+            <CubeCase v-for="option in options" :message1="option" /> 
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@
                 type="text"
                 name="metier"
                 id="metier"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
             <div class="flex flex-col gap-1 text-xl">
@@ -20,7 +20,7 @@
                 type="text"
                 name="contrat"
                 id="contrat"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
             <div class="flex flex-col gap-1 text-xl">
@@ -28,7 +28,7 @@
               <textarea
                 name="description"
                 id="description"
-                class="h-60 w-160 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-60 w-160 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
             <div class="flex flex-col gap-1 text-xl">
@@ -36,7 +36,7 @@
               <textarea
                 name="profil"
                 id="profil"
-                class="h-50 w-160 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-50 w-160 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
           </div>
@@ -48,7 +48,7 @@
                 type="text"
                 name="localisation"
                 id="localisation"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
             <div class="flex flex-col gap-1 text-xl">
@@ -57,7 +57,7 @@
                 type="text"
                 name="duree"
                 id="duree"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
           </div>
@@ -69,7 +69,7 @@
                 type="text"
                 name="etude"
                 id="etude"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
             <div class="flex flex-col gap-1 text-xl">
@@ -78,7 +78,7 @@
                 type="text"
                 name="experience"
                 id="experience"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
             <div class="flex flex-col gap-1 text-xl">
@@ -87,7 +87,7 @@
                 type="text"
                 name="emploi"
                 id="emploi"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
             <div class="flex flex-col gap-1 text-xl">
@@ -96,7 +96,7 @@
                 type="text"
                 name="langue"
                 id="langue"
-                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+                class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
               />
             </div>
           </div>
@@ -107,13 +107,13 @@
               type="text"
               name="echeance"
               id="echeance"
-              class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2"
+              class="h-14 w-107 rounded-sm border border-[#ccc9c9] p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
             />
           </div>
         </div>
         <div>
           <button
-            class="mt-10 w-50 rounded-sm bg-[#8352A5] px-4 py-2 text-center text-3xl text-white"
+            class="mt-10 w-50 rounded-sm bg-[#8352A5] px-4 py-2 text-center text-3xl text-white cursor-pointer"
             data-aos="zoom-in-up"
           >
             Valider

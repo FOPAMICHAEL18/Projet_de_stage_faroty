@@ -6,9 +6,9 @@
         <CubeCase v-for="option in options" :message1="option" />
       </div>
       <div class="mt-10 flex h-20 w-full flex-row items-center justify-between">
-        <div class="rounded-sm bg-[#8352A5] px-8 py-3 text-xl text-white offres-retour opacity-0 -translate-x-10">
-          <NuxtLink to="/">Retour</NuxtLink>
-        </div>
+        <NuxtLink to="/" class="rounded-sm bg-[#8352A5] px-8 py-3 text-xl text-white offres-retour opacity-0 -translate-x-10">
+          Retour
+        </NuxtLink>
         <div class="rounded-sm bg-[#8352A5] px-5 py-3 text-xl text-white offres-number opacity-0 translate-x-10 ">1</div>
       </div>
     </div>
