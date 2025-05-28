@@ -5,19 +5,11 @@
     </div>
     <form
       action=""
+      @submit.prevent="login"
       class="flex h-8/10 w-3/10 flex-col gap-15 rounded-xl border border-gray-300 px-12 pt-20"
     >
       <div class="flex justify-center text-4xl text-[#8352A5]">Acceder a votre compte</div>
       <div class="flex flex-col gap-5 text-xl">
-        <div class="flex flex-col gap-2">
-          <label for="name" class="w-fit">Nom</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="h-14 w-full rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
-          />
-        </div>
         <div class="flex flex-col gap-2">
           <label for="email" class="w-fit">Email</label>
           <input
@@ -25,6 +17,7 @@
             name="email"
             id="email"
             class="h-14 w-full rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
+            v-model="email"
           />
         </div>
         <div class="flex flex-col gap-2">
@@ -34,6 +27,7 @@
             name="post"
             id="post"
             class="h-14 w-full rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
+            v-model="name_department"
           />
         </div>
         <div class="flex flex-col gap-2">
@@ -43,11 +37,12 @@
             name="password"
             id="password"
             class="h-14 w-full rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
+            v-model="password"
           />
         </div>
       </div>
       <div class="flex flex-col items-center gap-4">
-        <button class="rounded-md bg-[#8352A5] px-12 py-2 text-2xl text-white cursor-pointer">Connexion</button>
+        <button class="rounded-md bg-[#8352A5] px-12 py-2 text-2xl text-white cursor-pointer" type="submit">Connexion</button>
         <p class="text-lg text-[#8352A5]"><NuxtLink to="sign-in">Creer un compte</NuxtLink></p>
       </div>
     </form>
@@ -55,15 +50,55 @@
 </template>
 
 <script setup>
-  onMounted(() => {
 
-useGsap.to(".index-bar", {
-    autoAlpha: 1, // Rend visible et ajuste l'opacité
-    y: 0, // Remet la carte à sa position normale
-    duration: 1, 
-    ease: "power2.out"
-  }
-);
+const store = useAuthStore();
+const email = ref('');
+const password = ref('');
+const name_department = ref('');
+const error = ref(null);
+const router = useRouter();
+
+
+onMounted(() => {
+
+  useGsap.to(".index-bar", {
+      autoAlpha: 1, // Rend visible et ajuste l'opacité
+      y: 0, // Remet la carte à sa position normale
+      duration: 1, 
+      ease: "power2.out"
+    }
+  );
 
 });
+const login = async () => {
+    error.value = null
+  try {
+    const response = await $fetch('http://localhost:8000/api/login', {
+      method: 'POST',
+      body: {
+        email: email.value,
+        name_department: name_department.value,
+        password: password.value
+      }
+    })
+    // Stocker le token dans le store
+    store.setToken(response.access_token)
+    // Vous pouvez aussi récupérer et stocker les infos utilisateur via /api/user
+    router.push('/admin')
+  } catch (err) {
+    error.value = "Erreur lors de la connexion. Veuillez vérifier vos identifiants."
+  }
+  if (error.value) {
+    console.error(error.value);
+  }
+  if (store.token) {
+    console.log("Connexion réussie, token stocké :", store.token);
+  } else {
+    console.error("Échec de la connexion, aucun token reçu.");
+  }
+
+}
+
+
+
 </script>
