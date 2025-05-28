@@ -14,15 +14,17 @@ class AuthController extends Controller
     public function register(Request $request) {
         $data = $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:chef_departements',
+            'email' => 'required|email|unique:users',
             'name_department' => 'required',
             'password' => 'required|confirmed',
+            'role' => 'required',
         ]);
-        $user = chef_departements::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'name_department' => $data['name_department'],
             'password' => Hash::make($data['password']),
+            'role' => $data['role'],
         ]);
         $token = $user->createToken('auth_token')->plainTextToken;
 
@@ -38,7 +40,7 @@ class AuthController extends Controller
             'name_department' => 'required',
             'password' => 'required',
         ]);
-        $user = chef_departements::where('email', $credentials['email'])->first();
+        $user = User::where('email', $credentials['email'])->first();
         if (! $user || ! Hash::check($credentials['password'], $user->password)) {
             throw ValidationException::withMessages(['email' => ['Invalid credentials.']]);
         };
@@ -50,6 +52,16 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type'   => 'Bearer',
+            'user'         => [
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'name_department' => $user->name_department,
+                'photo_profil' => $user->photo_profil,
+                'status' => $user->status,
+                'role' => $user->role,
+            ],
+
         ]);
 
     }

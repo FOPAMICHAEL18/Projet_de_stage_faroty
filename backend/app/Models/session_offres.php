@@ -12,7 +12,7 @@ class session_offres extends Model
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'directrice_id',
+        'user_id',
         'name',
         'name_offre',
         'create_offre',
@@ -27,9 +27,9 @@ class session_offres extends Model
         'profil',
     ];
 
-    public function directrice()
+    public function User()
     {
-        return $this->belongsTo(directrices::class);
+        return $this->belongsTo(User::class);
     }
     public function demande_candidature()
     {

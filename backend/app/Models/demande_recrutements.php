@@ -12,19 +12,15 @@ class demande_recrutements extends Model
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'chef_departement_id',
-        'directrice_id',
+        'user_id',
+        'title',
         'content',
         'actif',
     ];
 
-    public function chef_departement()
+    public function User()
     {
-        return $this->belongsTo(chef_departements::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function directrice()
-    {
-        return $this->belongsTo(directrices::class);
-    }
 }

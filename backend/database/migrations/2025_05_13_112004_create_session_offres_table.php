@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('session_offres', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('directrice_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('name_offre');
             $table->timestamp('create_offre')->useCurrent();

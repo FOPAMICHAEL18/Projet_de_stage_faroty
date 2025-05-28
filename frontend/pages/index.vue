@@ -1,129 +1,107 @@
 <template>
-    <div class="flex flex-col items-center justify-center">
-      <div class="flex w-18/20 flex-col gap-15 py-15">
-        <div class="flex h-30 w-full items-center justify-center rounded-lg bg-[#8352A5] text-5xl text-white index-bar opacity-0 translate-y-10">
-          Bienvenue sur le site carriere de Faroty
+  <div class="flex h-screen w-full flex-col items-center justify-center">
+    <div class="absolute top-25 w-60 rounded-lg bg-white px-12 py-3 shadow-lg">
+      <img src="@/public/logofaroty.png" alt="logofaroty" class="size-full" />
+    </div>
+    <form
+      action=""
+      @submit.prevent="login"
+      class="flex h-7/10 w-3/10 flex-col gap-15 rounded-xl border border-gray-300 px-12 pt-20"
+    >
+      <div class="flex justify-center text-4xl text-[#8352A5]">Acceder a votre compte</div>
+      <div class="flex flex-col gap-5 text-xl">
+        <div class="flex flex-col gap-2">
+          <label for="email" class="w-fit">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="h-14 w-full rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
+            v-model="email"
+          />
         </div>
-        <mini-title message1="Rechercher une offre" class="title-rechercher-offre" />
-        <form action="" class="flex flex-col gap-8">
-          <div class="flex flex-row items-center gap-5">
-            <input
-              type="text"
-              name="search"
-              class="h-14 w-11/20 rounded-sm border border-gray-300 p-2 index-search-bar opacity-0 translate-y-10 focus:outline focus:outline-[#8352A5] hover:cursor-pointer"
-            />
-            <button type="submit" class="size-14 rounded-sm bg-[#8352A5] p-2 text-white index-search-button opacity-0 translate-y-10  cursor-pointer">
-              <img src="@/public/icons8-search-250 (1).png" alt="search" class="size-full" />
-            </button>
-          </div>
-          <div class="flex flex-row items-center gap-11">
-            <select
-              class="h-13 w-72 rounded-sm border border-gray-300 p-2 text-gray-300 index-contrat opacity-0 translate-y-10 hover:cursor-pointer"
-              name="contrat"
-              id="contrat"
-            >
-              <option value="">Contrat</option>
-              <option value="CDI">CDI</option>
-              <option value="CDD">CDD</option>
-              <option value="Stage">Stage</option>
-            </select>
-            <select
-              class="h-13 w-72 rounded-sm border border-gray-300 p-2 text-gray-300 index-metier opacity-0 translate-y-10 hover:cursor-pointer"
-              name="metier"
-              id="metier"
-            >
-              <option value="">Metier</option>
-              <option value="CDI">Informatique</option>
-              <option value="CDD">Gestion Compta</option>
-              <option value="Stage">Gestion marketing</option>
-            </select>
-            <NuxtLink to="/offres"
-              class="flex h-13 w-72 items-center justify-center rounded-sm bg-[#8352A5] text-white index-voir opacity-0 translate-y-10 hover:cursor-pointer"
-            >
-              Voir toutes nos offres
-            </NuxtLink>
-          </div>
-        </form>
-        <MiniTitle message1="Nos dernieres offres d'emplois" class="title-derniere-offre" />
-        <div class="flex flex-wrap items-center gap-7 index-offre opacity-0 translate-y-10">
-          <CubeCase v-for="option in options" :message1="option.message1" :message2="option.message2" :message3="option.message3" />
+        <div class="flex flex-col gap-2">
+          <label for="post" class="w-fit">Poste</label>
+          <input
+            type="text"
+            name="post"
+            id="post"
+            class="h-14 w-full rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
+            v-model="name_department"
+          />
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="password" class="w-fit">Mot de passe</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="h-14 w-full rounded-sm border border-gray-300 p-2 focus:outline focus:outline-[#8352A5] hover:outline-[#8352A5] hover:outline cursor-pointer"
+            v-model="password"
+          />
         </div>
       </div>
-    </div>
-  </template>
-  
-  <script setup>
-  
-    const countstore = useCounterStore();
-    const options = [
-      { message1: "Développeur Frontend", message2: "CDD", message3: "3 mois" },
-      { message1: "Développeur Backend", message2: "CDI", message3: "2 ans" },
-      { message1: "Développeur Fullstack", message2: "Stage", message3: "1 mois" },
-      { message1: "Développeur Mobile", message2: "CDD", message3: "1 ans" },
-      { message1: "Développeur Web", message2: "Stage", message3: "3 mois" }, 
-      { message1: "Développeur Data", message2: "CDI", message3: "2 ans" },
-      { message1: "Développeur IA", message2: "Stage", message3: "6 mois" },
-    ];
+      <div class="flex flex-col items-center gap-4">
+        <button class="rounded-md bg-[#8352A5] px-12 py-2 text-2xl text-white cursor-pointer" >Connexion</button>
+      </div>
+    </form>
+  </div>
+</template>
 
-    onMounted(() => {
+<script setup>
 
-      useGsap.to(".index-bar", {
-          autoAlpha: 1, // Rend visible et ajuste l'opacité
-          y: 0, // Remet la carte à sa position normale
-          duration: 1, 
-          ease: "power2.out"
-        }
-      );
-      useGsap.to(".index-search-bar", {
-          autoAlpha: 1, // Rend visible et ajuste l'opacité
-          y: 0, // Remet la carte à sa position normale
-          duration: 1, 
-          ease: "power2.out",
-          delay: 0.3 // Délai de 0.5 seconde avant le début de l'animation
-        }
-      );
-      useGsap.to(".index-search-button", {
-          autoAlpha: 1, // Rend visible et ajuste l'opacité
-          y: 0, // Remet la carte à sa position normale
-          duration: 1, 
-          ease: "power2.out",
-          delay: 0.4 // Délai de 0.5 seconde avant le début de l'animation
-        }
-      );
-      useGsap.to(".index-contrat", {
-          autoAlpha: 1, // Rend visible et ajuste l'opacité
-          y: 0, // Remet la carte à sa position normale
-          duration: 1, 
-          ease: "power2.out",
-          delay: 0.5 // Délai de 0.5 seconde avant le début de l'animation
-        }
-      );
-      useGsap.to(".index-metier", {
-          autoAlpha: 1, // Rend visible et ajuste l'opacité
-          y: 0, // Remet la carte à sa position normale
-          duration: 1, 
-          ease: "power2.out",
-          delay: 0.6 // Délai de 0.5 seconde avant le début de l'animation
-        }
-      );
-      useGsap.to(".index-voir", {
-          autoAlpha: 1, // Rend visible et ajuste l'opacité
-          y: 0, // Remet la carte à sa position normale
-          duration: 1, 
-          ease: "power2.out",
-          delay: 0.7 // Délai de 0.5 seconde avant le début de l'animation
-        }
-      );
-      useGsap.to(".index-offre", {
-          autoAlpha: 1, // Rend visible et ajuste l'opacité
-          y: 0, // Remet la carte à sa position normale
-          duration: 1, 
-          ease: "power2.out",
-          delay: 1 // Délai de 0.5 seconde avant le début de l'animation
-        }
-      );
+const store = useAuthStore();
+const countstore = useCounterStore();
+const email = ref('');
+const password = ref('');
+const name_department = ref('');
+const error = ref(null);
+const router = useRouter();
 
-    });
 
-  </script>
-  
+onMounted(() => {
+
+  useGsap.to(".index-bar", {
+      autoAlpha: 1, // Rend visible et ajuste l'opacité
+      y: 0, // Remet la carte à sa position normale
+      duration: 1, 
+      ease: "power2.out"
+    }
+  );
+
+});
+const login = async () => {
+    error.value = null
+  try {
+    const response = await $fetch('http://localhost:8000/api/login', {
+      method: 'POST',
+      body: {
+        email: email.value,
+        name_department: name_department.value,
+        password: password.value
+      }
+    })
+    // Stocker le token dans le store
+    store.setToken(response.access_token)
+    store.setUser(response.user)
+    // Vous pouvez aussi récupérer et stocker les infos utilisateur via /api/user
+    router.push('/dashboard')
+    // Changer la connexion dans le store
+    countstore.changeconnect()
+  } catch (err) {
+    error.value = "Erreur lors de la connexion. Veuillez vérifier vos identifiants."
+  }
+  if (error.value) {
+    console.error(error.value);
+  }
+  if (store.token) {
+    console.log("Connexion réussie, token stocké :", store.token);
+  } else {
+    console.error("Échec de la connexion, aucun token reçu.");
+  }
+
+}
+
+
+
+</script>

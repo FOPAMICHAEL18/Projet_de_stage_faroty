@@ -84,15 +84,15 @@
     );
     useGsap.fromTo(".nombre-demande", 
         { x: 50 }, // Valeurs initiales
-        { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out", delay: 0.4 } // Valeurs finales
+        { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out", delay: 0.2 } // Valeurs finales
     );
     useGsap.fromTo(".nombre-candidature", 
         { x: -50 }, // Valeurs initiales
-        { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out", delay: 0.6 } // Valeurs finales
+        { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out", delay: 0.3 } // Valeurs finales
     );
     useGsap.fromTo(".nombre-entretien", 
         { x: 50 }, // Valeurs initiales
-        { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out", delay: 0.2 } // Valeurs finales
+        { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out", delay: 0.1 } // Valeurs finales
     );
 
   });

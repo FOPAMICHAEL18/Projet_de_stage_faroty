@@ -20,20 +20,21 @@ export const useAuthStore = defineStore('auth', () => {
   }
   return { token, user, setToken, setUser, logout }
 },
-{
-    persist: {
-    enabled: true,
-    strategies: [
-      {
-        key: 'auth', // Clé de stockage dans le localStorage
-        // Utiliser localStorage uniquement si celui-ci est défini (côté client)
-        storage: typeof window !== 'undefined' ? localStorage : undefined,
-        // Spécifiez les parties du store à persister
-        paths: ['token', 'user']
-      }
-    ]
-    }
+// {
+//     persist: {
+//     enabled: true,
+//     strategies: [
+//       {
+//         key: 'auth', // Clé de stockage dans le localStorage
+//         // Utiliser localStorage uniquement si celui-ci est défini (côté client)
+//         storage: typeof window !== 'undefined' ? localStorage : undefined,
+//         // Spécifiez les parties du store à persister
+//         paths: ['token', 'user']
+//       }
+//     ]
+//     }
 
 
 
-})
+// }
+)

@@ -4,10 +4,10 @@
         <div class="bg-[#8352A5] flex justify-center items-center text-white text-xl px-7 pt-2 pb-3 rounded-sm"><NuxtLink to="/log-in">connexion</NuxtLink></div>
     </div> -->
 
-  <div class="flex h-20 items-center justify-between px-25">
-    <div class="w-28 header-connection opacity-0 -translate-y-5"><img src="@/public/logofaroty.png" alt="logofaroty" /></div>
+  <div class="flex h-20 items-center justify-between px-25" v-if="isAdmin || isUser">
+    <div class="w-28 header-connection "><img src="@/public/logofaroty.png" alt="logofaroty" /></div>
     <div class="flex items-center gap-25">
-      <div class="flex gap-15 text-xl text-[#8352A5]" v-if="connect2">
+      <div class="flex gap-15 text-xl text-[#8352A5]" v-if="isAdmin">
         <div class="group px-4 hover:cursor-pointer">
           <!-- <p ref="section" :class="conditionalclass" class=" after:block after:w-4.5 after:h-0.5 after:bg-[#8352A5] after:invisible " @click="change">Accueil</p> -->
           <p ref="inputdash1" :class="conditionalclass" class="after:block after:h-0.5 after:w-0 after:bg-[#8352A5] after:transition-all after:duration-500 group-hover:after:w-4.5" @click="selectdash1">
@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-      <div class="mr-80 flex gap-15 text-xl text-[#8352A5]" v-if="connect3">
+      <div class="mr-80 flex gap-15 text-xl text-[#8352A5]" v-if="isUser">
         <div class="group px-4 hover:cursor-pointer">
           <!-- <p ref="section" :class="conditionalclass" class=" after:block after:w-4.5 after:h-0.5 after:bg-[#8352A5] after:invisible " @click="change">Accueil</p> -->
           <p
@@ -112,7 +112,7 @@
           </p>
         </div>
       </div>
-      <div v-if="connect">
+      <div>
         <div ref="user-pp" class="w-12 cursor-pointer rounded-full" @click="useroption">
           <img src="@/public/icons8-male-user-100.png" alt="user" />
         </div>
@@ -148,94 +148,101 @@
           </div>
         </div>
       </div>
-      <NuxtLink to="/log-in"
-        class="flex items-center justify-center rounded-sm bg-[#8352A5] px-7 pt-2 pb-3 text-xl text-white header-connection opacity-0 -translate-y-5"
-        v-if="!connect"
-      >
-        connexion
-      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup>
-  const countstore = useCounterStore();
-  const dash1 = computed(() => countstore.dash1);
-  const dash2 = computed(() => countstore.dash2);
-  const dash3 = computed(() => countstore.dash3);
-  const dash4 = computed(() => countstore.dash4);
-  const connect = computed(() => countstore.connect);
-  const connect2 = computed(() => countstore.connect2);
-  const connect3 = computed(() => countstore.connect3);
-  const inputdash1 = useTemplateRef("inputdash1");
-  const inputdash2 = useTemplateRef("inputdash2");
-  const inputdash3 = useTemplateRef("inputdash3");
-  const inputdash4 = useTemplateRef("inputdash4");
-  const userpp = useTemplateRef("user-pp");
-  const usersetting = useTemplateRef("user-setting");
-  const conditionalclass = computed(() => {
-    if (dash1.value === true) {
-      inputdash1.value?.classList.add("after:w-4.5");
-    } else {
-      inputdash1.value?.classList.remove("after:w-4.5");
-    }
-    if (dash2.value === true) {
-      inputdash2.value?.classList.add("after:w-4.5");
-    } else {
-      inputdash2.value?.classList.remove("after:w-4.5");
-    }
-  });
+const countstore = useCounterStore();
+const dash1 = computed(() => countstore.dash1);
+const dash2 = computed(() => countstore.dash2);
+const dash3 = computed(() => countstore.dash3);
+const dash4 = computed(() => countstore.dash4);
+const connect = computed(() => countstore.connect);
+const connect2 = computed(() => countstore.connect2);
+const connect3 = computed(() => countstore.connect3);
+const inputdash1 = useTemplateRef("inputdash1");
+const inputdash2 = useTemplateRef("inputdash2");
+const inputdash3 = useTemplateRef("inputdash3");
+const inputdash4 = useTemplateRef("inputdash4");
+const userpp = useTemplateRef("user-pp");
+const usersetting = useTemplateRef("user-setting");
+const authStore = useAuthStore()
 
-  const selectdash1 = () => {
-    if (dash2.value === true) {
-      countstore.changedash2();
-    }
-    if (dash1.value === false) {
-      countstore.changedash1();
-    }
-  };
-  const selectdash2 = () => {
-    if (dash1.value === true) {
-      countstore.changedash1();
-    }
-    if (dash2.value === false) {
-      countstore.changedash2();
-    }
-  };
-  const useroption = () => {
-    if (usersetting.value?.classList.contains("invisible")) {
-      usersetting.value?.classList.remove("invisible");
-      usersetting.value?.classList.remove("opacity-0");
-      usersetting.value?.classList.remove("translate-y-2");
-      usersetting.value?.classList.remove("transition-all");
-      usersetting.value?.classList.remove("duration-500");
-      usersetting.value?.classList.add("visible");
-      usersetting.value?.classList.add("opacity-100");
-      usersetting.value?.classList.add("translate-y-0");
-      usersetting.value?.classList.add("transition-all");
-      usersetting.value?.classList.add("duration-500");
-    } else {
-      usersetting.value?.classList.remove("visible");
-      usersetting.value?.classList.remove("opacity-100");
-      usersetting.value?.classList.remove("translate-y-0");
-      usersetting.value?.classList.remove("transition-all");
-      usersetting.value?.classList.remove("duration-500");
-      usersetting.value?.classList.add("invisible");
-      usersetting.value?.classList.add("opacity-0");
-      usersetting.value?.classList.add("translate-y-2");
-      usersetting.value?.classList.add("transition-all");
-      usersetting.value?.classList.add("duration-500");
-    }
-  };
+// Propriété calculée pour vérifier si l'utilisateur est admin
+const isAdmin = computed(() => {
+  return authStore.user && authStore.user.role === "admin"
+})
+
+// Propriété calculée pour vérifier si l'utilisateur est un utilisateur normal
+const isUser = computed(() => {
+  return authStore.user && authStore.user.role === "user"
+})
+
+
+const conditionalclass = computed(() => {
+  if (dash1.value === true) {
+    inputdash1.value?.classList.add("after:w-4.5");
+  } else {
+    inputdash1.value?.classList.remove("after:w-4.5");
+  }
+  if (dash2.value === true) {
+    inputdash2.value?.classList.add("after:w-4.5");
+  } else {
+    inputdash2.value?.classList.remove("after:w-4.5");
+  }
+});
+
+const selectdash1 = () => {
+  if (dash2.value === true) {
+    countstore.changedash2();
+  }
+  if (dash1.value === false) {
+    countstore.changedash1();
+  }
+};
+const selectdash2 = () => {
+  if (dash1.value === true) {
+    countstore.changedash1();
+  }
+  if (dash2.value === false) {
+    countstore.changedash2();
+  }
+};
+const useroption = () => {
+  if (usersetting.value?.classList.contains("invisible")) {
+    usersetting.value?.classList.remove("invisible");
+    usersetting.value?.classList.remove("opacity-0");
+    usersetting.value?.classList.remove("translate-y-2");
+    usersetting.value?.classList.remove("transition-all");
+    usersetting.value?.classList.remove("duration-500");
+    usersetting.value?.classList.add("visible");
+    usersetting.value?.classList.add("opacity-100");
+    usersetting.value?.classList.add("translate-y-0");
+    usersetting.value?.classList.add("transition-all");
+    usersetting.value?.classList.add("duration-500");
+  } else {
+    usersetting.value?.classList.remove("visible");
+    usersetting.value?.classList.remove("opacity-100");
+    usersetting.value?.classList.remove("translate-y-0");
+    usersetting.value?.classList.remove("transition-all");
+    usersetting.value?.classList.remove("duration-500");
+    usersetting.value?.classList.add("invisible");
+    usersetting.value?.classList.add("opacity-0");
+    usersetting.value?.classList.add("translate-y-2");
+    usersetting.value?.classList.add("transition-all");
+    usersetting.value?.classList.add("duration-500");
+  }
+};
 onMounted(() => {
 
-  useGsap.to(".header-connection", {
-      autoAlpha: 1, // Rend visible et ajuste l'opacité
-      y: 0, // Remet la carte à sa position normale
-      duration: 1, 
-      ease: "power2.out"
-    }
-  );
+  // useGsap.to(".header-connection", {
+  //     autoAlpha: 1, // Rend visible et ajuste l'opacité
+  //     y: 0, // Remet la carte à sa position normale
+  //     duration: 1, 
+  //     ease: "power2.out"
+  //   }
+  // );
 
 });
 </script>

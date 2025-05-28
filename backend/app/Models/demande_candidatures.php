@@ -13,7 +13,7 @@ class demande_candidatures extends Model
 
     protected $fillable = [
         'session_offre_id',
-        'directrice_id',
+        'user_id',
         'name',
         'email',
         'adresse',

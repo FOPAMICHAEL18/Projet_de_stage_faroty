@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('demande_recrutements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('chef_departement_id');
-            $table->unsignedBigInteger('directrice_id');
+            $table->unsignedBigInteger('user_id');
+            $table->text('title');
             $table->longText('content');
             $table->boolean('status')->nullable()->default(null);
             $table->timestamps();

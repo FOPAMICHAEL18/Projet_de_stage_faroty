@@ -39,9 +39,6 @@ export const useCounterStore = defineStore("counter", () => {
     function visibility() {
       visible.value = !visible.value;
     }
-    function changeconnect() {
-      connect.value = !connect.value;
-    }
   
     return {
       dash1,
@@ -65,7 +62,6 @@ export const useCounterStore = defineStore("counter", () => {
       changeoption3,
       changeoption4,
       visibility,
-      changeconnect
     };
   });
   

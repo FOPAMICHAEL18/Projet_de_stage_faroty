@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('demande_candidatures', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('session_offre_id');
-            $table->unsignedBigInteger('directrice_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
