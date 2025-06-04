@@ -12,7 +12,7 @@ class demande_candidatures extends Model
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'session_offre_id',
+        'offre_id',
         'user_id',
         'name',
         'email',
@@ -28,9 +28,9 @@ class demande_candidatures extends Model
         'status',
     ];
 
-    public function session_offre()
+    public function offre()
     {
-        return $this->belongsTo(session_offres::class);
+        return $this->belongsTo(offres::class);
     }
     public function entretien()
     {

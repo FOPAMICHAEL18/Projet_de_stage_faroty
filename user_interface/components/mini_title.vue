@@ -20,6 +20,10 @@
         { x: 20 }, // Valeurs initiales
         { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out", delay: 0.9 } // Valeurs finales
       );
+      useGsap.fromTo(".title-resultat-recherche", 
+        { x: 20 }, // Valeurs initiales
+        { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out" } // Valeurs finales
+      );
       useGsap.fromTo(".title-nos-offres", 
         { x: 20 }, // Valeurs initiales
         { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out" } // Valeurs finales

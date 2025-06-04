@@ -43,6 +43,7 @@
       </div>
       <div class="flex flex-col items-center gap-4">
         <button class="rounded-md bg-[#8352A5] px-12 py-2 text-2xl text-white cursor-pointer" >Connexion</button>
+        <p v-if="error" class="text-red-500 mt-4">{{ error }}</p>
       </div>
     </form>
   </div>
@@ -101,7 +102,6 @@ const login = async () => {
   }
 
 }
-
 
 
 </script>

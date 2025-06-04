@@ -15,7 +15,8 @@
           <img src="@/public/icons8-arrow-64.png" alt="arrow" class="size-full" />
         </div>
       </div>
-      <div
+      <NuxtLink
+        to="/admin-demande"
         class="group flex cursor-pointer flex-row items-center gap-2"
         v-if="props.message1 === 'Demandes'"
       >
@@ -25,7 +26,7 @@
         <div class="size-6 duration-200 group-hover:translate-x-1 group-hover:duration-200">
           <img src="@/public/icons8-arrow-64 (1).png" alt="arrow" class="size-full" />
         </div>
-      </div>
+      </NuxtLink>
       <div
         class="group flex cursor-pointer flex-row items-center gap-2"
         v-if="props.message1 === 'Candidatures'"

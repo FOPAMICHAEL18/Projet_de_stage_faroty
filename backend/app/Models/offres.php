@@ -7,15 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class session_offres extends Model
+class offres extends Model
 {
     use HasFactory, Notifiable;
 
     protected $fillable = [
         'user_id',
-        'name',
         'name_offre',
-        'create_offre',
         'delete_offre',
         'metier',
         'contrat',
@@ -25,6 +23,8 @@ class session_offres extends Model
         'localisation',
         'description',
         'profil',
+        'status',
+        'language',
     ];
 
     public function User()

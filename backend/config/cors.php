@@ -30,7 +30,7 @@ return [
     | Définissez ici l'URL de votre frontend (par exemple Nuxt3 côté dev).
     |
     */
-    'allowed_origins' => ['http://localhost:3000'],
+    'allowed_origins' => ['http://localhost:3000', 'http://localhost:3001'],
 
     /*
     |--------------------------------------------------------------------------

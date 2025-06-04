@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     'nuxt-aos',
   ],
 
-  plugins: ['~/plugins/aos.client.ts', '~/plugins/piniaPersistedState.client.js'],
+  plugins: ['~/plugins/aos.client.ts', '~/plugins/piniaPersistedState.client.js', '~/plugins/authFetch.js'],
 
   vite: {
     plugins: [
@@ -27,6 +27,13 @@ export default defineNuxtConfig({
       scrollTrigger: true,
     },
   },
+
+  runtimeConfig: {
+    public: {
+      apiBase: 'http://localhost:8000/api'
+    }
+  }
+
 
 
 

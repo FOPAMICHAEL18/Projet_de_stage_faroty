@@ -17,7 +17,7 @@
       <div
         class="flex h-30 w-full items-center justify-center rounded-lg bg-[#8352A5] text-5xl text-white department-bar opacity-0 -translate-x-20"
       >
-        Bienvenue Msr FOPA
+        Bienvenue {{ authStore.user.name }} 
       </div>
       <form
         action=""

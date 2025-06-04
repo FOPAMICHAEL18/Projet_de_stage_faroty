@@ -56,8 +56,8 @@ class User extends Authenticatable
         return $this->hasMany(demande_recrutements::class);
     }
 
-    public function session_offre()
+    public function offre()
     {
-        return $this->hasMany(session_offres::class);
+        return $this->hasMany(offres::class);
     }
 }

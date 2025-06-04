@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('session_offres', function (Blueprint $table) {
+        Schema::create('offres', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('name');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('name_offre');
-            $table->timestamp('create_offre')->useCurrent();
             $table->date('delete_offre');
             $table->string('metier');
             $table->string('contrat');
@@ -24,8 +22,10 @@ return new class extends Migration
             $table->string('niveau_etude');
             $table->string('niveau_experience');
             $table->string('localisation');
+            $table->string('language');
             $table->longText('description');
             $table->longText('profil');
+            $table->boolean('status')->nullable()->default(null);
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('session_offres');
+        Schema::dropIfExists('offres');
     }
 };

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('demande_candidatures', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('session_offre_id');
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('offre_id')->constrained('offres');
+            $table->foreignId('user_id')->constrained('users')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('cv');
             $table->string('langue');
             $table->string('photo_cni')->nullable();
+            $table->string('plan')->nullable();
             $table->boolean('status')->nullable()->default(null);
             $table->timestamps();
         });

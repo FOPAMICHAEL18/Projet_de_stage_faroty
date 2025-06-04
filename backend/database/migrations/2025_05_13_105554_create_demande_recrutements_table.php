@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('demande_recrutements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
             $table->text('title');
             $table->longText('content');
             $table->boolean('status')->nullable()->default(null);
