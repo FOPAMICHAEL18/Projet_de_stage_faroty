@@ -12,7 +12,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.11.0",
     "@tailwindcss/vite": "^4.1.7",
-    "nuxt": "^3.17.4",
+    "nuxt": "^3.19.0",
     "nuxt-aos": "^1.2.5",
     "pinia": "^3.0.2",
     "tailwindcss": "^4.1.7",
